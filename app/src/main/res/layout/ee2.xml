@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:minWidth="500dp"
+            android:minHeight="200dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/a_corner"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:paddingTop="30dp">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Alert Dialog"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:padding="5dp"
+                android:id="@+id/tv2"
+                android:layout_below="@id/tv1"
+                android:justificationMode="none"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This is the alert dialog to showing alert to user"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16.5sp"
+                />
+
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/tv2"
+                android:padding="10dip" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/tvCan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/a_corner2"
+                        android:textSize="16.5sp"
+                        android:text="Car" />
+
+                    <Button
+                        android:id="@+id/tvok"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16.5sp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/a_corner2"
+                        android:text="Vehicle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center_horizontal">-->
+
+<!--        <LinearLayout-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:gravity="top|center_horizontal"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginBottom="2dp"-->
+<!--            android:elevation="4dp">-->
+
+<!--            <ImageView-->
+<!--                android:visibility="visible"-->
+<!--                android:id="@+id/textView"-->
+<!--                android:src="@drawable/applogo"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginTop="1dp"-->
+<!--                android:gravity="center_horizontal" />-->
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+
+
+</merge>

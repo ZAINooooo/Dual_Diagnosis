@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="end">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="50dp"
+            android:src="@drawable/splash_iconss" />
+
+
+        <androidx.appcompat.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView"
+            android:minHeight="?attr/actionBarSize"
+            android:background="#D81B60">
+
+            <TextView
+                android:id="@+id/m1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mons"
+                android:text="DASHBOARD"
+                android:textColor="#ffffff"
+                android:layout_gravity="center"
+                android:paddingTop="5dp"
+                android:textSize="20dp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:layout_width="match_parent"
+            android:id="@+id/drawer"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar">
+
+            <LinearLayout
+                android:id="@+id/llayout"
+                android:layout_width="match_parent"
+                android:layout_below="@id/toolbar"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/fl_MainContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:fitsSystemWindows="true"
+                app:menu="@menu/activity_main_drawer"
+                app:headerLayout="@layout/nav_header_main"
+                android:theme="@style/NavigationTheme" />
+
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context=".Dual_Diagnosis"-->
+    <!--android:orientation="vertical"-->
+    <!--android:background="@color/colorLightWhite"-->
+    <!--&gt;-->
+
+    <!--<androidx.appcompat.widget.Toolbar-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:background="#F50000"-->
+        <!--app:titleTextColor="@color/colorWhite">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/title"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textSize="20dp"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:drawableLeft="@drawable/ic_action_name"-->
+
+            <!--android:text="DUAL DIAGNOSIS AUSTRALIA"/>-->
+
+    <!--</androidx.appcompat.widget.Toolbar>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/image1"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="35dp"-->
+
+        <!--android:src="@drawable/messenger" />-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<Button-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+
+            <!--android:gravity="center"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:paddingRight="10dp"-->
+            <!--android:text="Add Space"-->
+            <!--android:textSize="18dp"-->
+            <!--android:background="@drawable/btn"/>-->
+
+        <!--<Button-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+
+            <!--android:gravity="center"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:paddingRight="10dp"-->
+            <!--android:background="@drawable/btn_shape"-->
+
+            <!--android:text="Questionnaries" />-->
+
+
+    <!--</LinearLayout>-->
+
+
+<!--</LinearLayout>-->

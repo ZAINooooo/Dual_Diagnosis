@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+
+    >
+
+    <ImageView
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:background="@drawable/gradient"
+        android:layout_centerInParent="true"
+        >
+
+    </ImageView>
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="260dp"
+        android:background="@drawable/small_circle"
+        android:layout_centerInParent="true"
+        >
+
+    </ImageView>
+
+    //Parent
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+        <!-- first horizontal layout-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <!--First Vertical child-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/lay1"
+                android:paddingTop="85dp"
+                android:visibility="visible">
+                <!--Servey MonkeY-->
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/innerlay"
+                    android:orientation="vertical"
+                    android:background="@drawable/btn_black"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/home"/>
+                </LinearLayout>
+
+
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="Servey Monkey"
+                    android:textSize="15sp"
+                    android:layout_gravity="center">
+
+                </TextView>
+            </LinearLayout>
+            <!--second Vertical child-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="30dp"
+
+                android:orientation="vertical"
+                android:id="@+id/lay2"
+
+                android:visibility="visible">
+                <!--Finance-->
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/innerlay2"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/btn_black"
+                    android:gravity="center">
+
+                    <!--android:gravity="center"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:id="@+id/lay1"-->
+                    <!--android:paddingTop="85dp"-->
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/home"/>
+
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="Finance"
+                    android:layout_marginBottom="60dp"
+                    android:textSize="15sp"
+                    >
+
+                </TextView>
+            </LinearLayout>
+            <!--third Vertical child-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                android:orientation="vertical"
+                android:id="@+id/lay3"
+                android:paddingTop="75dp"
+                android:paddingLeft="20dp"
+                android:visibility="visible">
+                <!--Finance-->
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/innerlay3"
+                    android:orientation="vertical"
+                    android:background="@drawable/btn_black"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/home"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="Administration"
+                    android:textSize="15sp"
+                    android:layout_gravity="center">
+
+                </TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!--First Vertical child-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/lay4"
+                android:paddingRight="105dp"
+                android:visibility="visible">
+                <!--policiies-->
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/innerlay4"
+                    android:orientation="vertical"
+                    android:background="@drawable/btn_black"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/home"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="Policies"
+                    android:textSize="15sp"
+                    android:layout_gravity="center">
+
+                </TextView>
+            </LinearLayout>
+
+            <!--third Vertical child-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/lay5"
+                android:paddingLeft="120dp"
+                android:visibility="visible">
+                <!--Proda-->
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/innerlay5"
+                    android:orientation="vertical"
+                    android:background="@drawable/btn_black"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/home"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="Proda"
+                    android:textSize="15sp"
+                    android:layout_gravity="center">
+
+                </TextView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- third horizontal layout-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:orientation="horizontal">
+
+            <!--First Vertical child-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/lay6"
+                android:paddingRight="30dp"
+                android:paddingBottom="65dp"
+                android:visibility="visible">
+                <!--Moodle-->
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/innerlay6"
+                    android:orientation="vertical"
+                    android:background="@drawable/btn_black"
+                    android:gravity="center"
+                    >
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/home" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="Moodle"
+                    android:textSize="15sp"
+                    android:layout_gravity="center">
+
+                </TextView>
+            </LinearLayout>
+            <!--second Vertical child-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/lay7"
+
+                android:visibility="visible">
+                <!--Private Practice-->
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/innerlay7"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/btn_black"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/home"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="P.Practice"
+                    android:textSize="15sp"
+                    android:layout_gravity="center">
+
+                </TextView>
+            </LinearLayout>
+            <!--third Vertical child-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/lay8"
+                android:paddingLeft="30dp"
+                android:paddingBottom="75dp"
+
+                android:visibility="visible">
+                <!--Dual Diagnosis Australia-->
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/innerlay8"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/btn_black"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/home"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="DualDiagnosis"
+                    android:textSize="15sp"
+                    android:layout_gravity="center">
+
+                </TextView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Questionaries"
+    android:orientation="vertical"
+    android:background="@color/colorLightWhite"
+    android:padding="8dp">
+
+
+    <Button
+        android:id="@+id/anxiety_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="Report"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/autism_rectangle"
+        android:textSize="18dp"
+        android:fontFamily="@font/myriadpro"
+        android:textStyle="bold"
+        android:paddingRight="10dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
+        android:drawableRight="@drawable/ic_action_name"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="ABI Report"
+        android:background="@drawable/anxiety_rectangle"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/myriadpro"
+        android:paddingRight="10dp"
+        android:drawableRight="@drawable/ic_action_name"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"/>
+
+    <!--<Button-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="15dp"-->
+    <!--android:background="#000"-->
+    <!--android:drawableRight="@drawable/ic_action_name"-->
+    <!--android:gravity="left|center_vertical"-->
+    <!--android:paddingLeft="10dp"-->
+    <!--android:paddingRight="10dp"-->
+    <!--android:text="Biopsychosocial History Form"-->
+    <!--android:textAllCaps="false"/>-->
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="Anxiety report"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/anxiety_rectangle"
+        android:textSize="18dp"
+        android:fontFamily="@font/myriadpro"
+        android:textStyle="bold"
+        android:paddingRight="10dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
+        android:drawableRight="@drawable/ic_action_name"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"/>
+
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="Letterhead "
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/anxiety_rectangle"
+        android:textSize="18dp"
+        android:fontFamily="@font/myriadpro"
+        android:textStyle="bold"
+        android:paddingRight="10dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
+        android:drawableRight="@drawable/ic_action_name"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"/>
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:text="NDIS Service Agreement"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/anxiety_rectangle"
+        android:textSize="18dp"
+        android:fontFamily="@font/myriadpro"
+        android:textStyle="bold"
+        android:paddingRight="10dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="10dp"
+        android:drawableRight="@drawable/ic_action_name"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"/>
+</LinearLayout>

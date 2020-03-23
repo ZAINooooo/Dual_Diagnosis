@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_landing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:paddingBottom="5dp"
+    tools:context=".MainActivity"
+    android:gravity="center">
+
+    <androidx.appcompat.widget.Toolbar
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/toolbar"
+    android:background="#F50000"
+    app:titleTextColor="@color/colorWhite">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:drawableLeft="@drawable/ic_action_name"
+        android:text="DASHBOARD"/>
+
+</androidx.appcompat.widget.Toolbar>
+
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@drawable/gradient"
+        android:layout_centerInParent="true"
+       >
+
+    </ImageView>
+    <ImageView
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:background="@drawable/small_circle"
+        android:layout_centerInParent="true"
+        >
+
+    </ImageView>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="220dp"
+            android:paddingRight="10dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_black"
+                android:orientation="vertical"
+
+                >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/home">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Financial"
+                android:textColor="@color/colorBlack"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="70dp"
+
+            >
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/circle"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/home">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:text="Financial"
+                android:textColor="@color/colorBlack"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="220dp"
+            android:paddingLeft="10dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_black"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/home">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Financial"
+                android:textColor="@color/colorBlack"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+//Second
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:paddingRight="95dp">
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:background="@drawable/btn_black">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/home"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="top"
+                android:text="Financial"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:paddingLeft="95dp">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:background="@drawable/btn_black">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/home"
+                    android:layout_gravity="center"></ImageView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="top"
+                android:text="Financial"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+    //third
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:paddingBottom="150dp"
+            android:layout_margin="20dp">
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:background="@drawable/btn_black">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/home"
+                    android:layout_gravity="center"></ImageView>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="top"
+                android:text="Financial"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:layout_marginBottom="50dp"
+           >
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:background="@drawable/btn_black">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/home"
+                    android:layout_gravity="center"></ImageView>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="top"
+                android:text="Financial"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="150dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_black"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/home"></ImageView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:text="Financial"
+                android:textColor="@color/colorBlack"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</RelativeLayout>

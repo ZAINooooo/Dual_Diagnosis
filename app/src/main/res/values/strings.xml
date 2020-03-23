@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Dual Diagnosis</string>
+    <string name="dialog">Enjoying Hotspot VPN?</string>
+    <string name="text1">Do you ever feel restlessness or feeling keyed up on edge?</string>
+    <string name="text2">Do you ever feel like you\'re easily fatigued?</string>
+    <string name="text3">Do you have difficulty concentrating or your mind going blank?</string>
+    <string name="text4">Do often feel irritable?</string>
+    <string name="text5">Do you suffer with muscle tension?</string>
+    <string name="text6">Have you recently suffered with sleep disturbance(difficulty falling or staying asllep, or restless unsatisfying sleep)?</string>
+    <string name="one_color_views">One color views:</string>
+    <string name="one_color_without_border">One color views without border and not full size:</string>
+    <string name="two_colors">Views with two colors + selectable:</string>
+
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_home">DASHBOARD</string>
+    <string name="nav_photos">Blogs</string>
+    <string name="nav_movies">Prices</string>
+    <string name="nav_about_us">About Us</string>
+
+    <string-array name="nav_item_activity_titles">
+        <item>DASHBOARD</item>
+        <!--<item>Blogs</item>-->
+        <item>Add Space</item>
+        <item>About Us</item>
+        <item>Log Out</item>
+
+    </string-array>
+
+
+    <string-array name="nav_item_activity_titles_admin">
+        <item>Orders</item>
+        <item>User</item>
+        <item>About Us</item>
+        <item>LogOut</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login_">Login_Activity</string>
+
+</resources>
