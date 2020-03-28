@@ -3,54 +3,140 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     >
 
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <!--android:layout_centerInParent="true"-->
+
+
+
+
+
+
+
+
+        <!--<EditText-->
+            <!--android:id="@+id/enter_name"-->
+            <!--android:hint="Enter Your Name"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:singleLine="true"-->
+            <!--android:paddingLeft="4dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/txtbackground"/>-->
+
 
         <Button
-            android:id="@+id/what_does_nds_provide"
-            android:layout_width="350dp"
-            android:layout_marginTop="100dp"
-            android:layout_height="60dp"
-            android:background="@drawable/add_space_pic"
-            android:textAllCaps="false"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/mons"
-            android:text="ADD SPACE"
-            android:textColor="#ffffff"
-            android:textSize="16dp"
+        android:id="@+id/what_does_nds_provide"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:background="@drawable/add_space_pic"
+        android:textAllCaps="false"
+        android:paddingLeft="4dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/mons"
+        android:text="ADD SPACE"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        />
 
-            android:layout_centerHorizontal="true"
-            />
+        <!--<EditText-->
+            <!--android:id="@+id/enter_phone_number"-->
+            <!--android:hint="Enter Phone Number"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textSize="15dp"-->
+            <!--android:gravity="center"-->
+            <!--android:singleLine="true"-->
+            <!--android:paddingLeft="4dp"-->
+            <!--android:inputType="phone"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/txtbackground"/>-->
 
 
         <Button
-            android:id="@+id/ndis_database"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:background="@drawable/question_pic"
-            android:fontFamily="@font/mons"
-            android:text="QUESTIONNAIRES"
-            android:textColor="#ffffff"
-            android:textSize="16dp"
-            android:textAllCaps="false"
-            android:layout_marginBottom="25dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/what_does_nds_provide"
-            />
+        android:id="@+id/ndis_database"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:background="@drawable/question_pic"
+        android:fontFamily="@font/mons"
+        android:text="QUESTIONNAIRES"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        android:textAllCaps="false"
+        android:layout_marginBottom="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/what_does_nds_provide"
+        />
 
-
-
-
-    </RelativeLayout>
+    </LinearLayout>
 
 
 
 
 </RelativeLayout>
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--&gt;-->
+
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--&lt;!&ndash;android:layout_centerInParent="true"&ndash;&gt;-->
+
+        <!--<Button-->
+            <!--android:id="@+id/what_does_nds_provide"-->
+            <!--android:layout_width="350dp"-->
+            <!--android:layout_marginTop="100dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:background="@drawable/add_space_pic"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:fontFamily="@font/mons"-->
+            <!--android:text="ADD SPACE"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:textSize="16dp"-->
+
+            <!--android:layout_centerHorizontal="true"-->
+            <!--/>-->
+
+
+        <!--<Button-->
+            <!--android:id="@+id/ndis_database"-->
+            <!--android:layout_width="350dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:background="@drawable/question_pic"-->
+            <!--android:fontFamily="@font/mons"-->
+            <!--android:text="QUESTIONNAIRES"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:textSize="16dp"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:layout_marginBottom="25dp"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_below="@id/what_does_nds_provide"-->
+            <!--/>-->
+
+
+
+
+    <!--</RelativeLayout>-->
+
+
+
+
+<!--</RelativeLayout>-->

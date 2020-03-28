@@ -5,6 +5,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -23,6 +24,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.rahman.dialog.Activity.SmartDialog;
+import com.rahman.dialog.ListenerCallBack.SmartDialogClickListener;
+import com.rahman.dialog.Utilities.SmartDialogBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,6 +40,7 @@ public class SignUpActivity extends BaseActivity {
     Button sign_up;
     EditText name,email_login,password,confirm_password;
     SharedPreferences sharedPreferences;
+    Typeface face , face2;
 
     String username,email_address,password_signup , confirm_signup  , value2 , statusCode,value5;
 
@@ -46,6 +51,10 @@ public class SignUpActivity extends BaseActivity {
         setContentView(R.layout.activity_sign_up);
 
         sharedPreferences = getSharedPreferences("DATA", MODE_PRIVATE);
+
+
+        face = Typeface.createFromAsset(getAssets(),"ptsanswebbold.ttf");
+        face2 = Typeface.createFromAsset(getAssets(),"ptsanswebregular.ttf");
 
         name = findViewById(R.id.name);
         email_login = findViewById(R.id.email_login);
@@ -111,12 +120,22 @@ public class SignUpActivity extends BaseActivity {
                 }
             });
 
-            SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
-            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-            pDialog.setTitleText("Fields Are Required..!!");
-            pDialog.setCancelable(true);
-            pDialog.show();
-            return;
+
+
+
+            new SmartDialogBuilder(SignUpActivity.this)
+                    .setTitle("Error Message")
+                    .setSubTitle("Fields Are Required..!!")
+                    .setCancalable(true)
+                    .setTitleFont(face)
+                    .setSubTitleFont(face2)
+                    .setPositiveButton("OK", new SmartDialogClickListener() {
+                        @Override
+                        public void onClick(SmartDialog smartDialog) {
+                            smartDialog.dismiss();
+                        }
+                    }).build().show();
+
 
         }
 
@@ -132,12 +151,26 @@ public class SignUpActivity extends BaseActivity {
                         }
                     });
 
-                    SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
-                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                    pDialog.setTitleText("Name Is Required..!!");
-                    pDialog.setCancelable(true);
-                    pDialog.show();
-                    return;
+//                    SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
+//                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                    pDialog.setTitleText("Name Is Required..!!");
+//                    pDialog.setCancelable(false);
+//                    pDialog.show();
+//                    return;
+
+                    new SmartDialogBuilder(SignUpActivity.this)
+                            .setTitle("Error Message")
+                            .setSubTitle("Name Is Required..!!")
+                            .setCancalable(true)
+                            .setTitleFont(face)
+                            .setSubTitleFont(face2)
+                            .setPositiveButton("OK", new SmartDialogClickListener() {
+                                @Override
+                                public void onClick(SmartDialog smartDialog) {
+                                    smartDialog.dismiss();
+                                }
+                            }).build().show();
+
                 }
             });
 
@@ -154,12 +187,26 @@ public class SignUpActivity extends BaseActivity {
                         }
                     });
 
-                    SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
-                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                    pDialog.setTitleText("Email Is Required..!!");
-                    pDialog.setCancelable(true);
-                    pDialog.show();
-                    return;
+//                    SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
+//                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                    pDialog.setTitleText("Email Is Required..!!");
+//                    pDialog.setCancelable(false);
+//                    pDialog.show();
+//                    return;
+
+                    new SmartDialogBuilder(SignUpActivity.this)
+                            .setTitle("Error Message")
+                            .setSubTitle("Email Is Required..!!")
+                            .setCancalable(true)
+                            .setTitleFont(face)
+                            .setSubTitleFont(face2)
+                            .setPositiveButton("OK", new SmartDialogClickListener() {
+                                @Override
+                                public void onClick(SmartDialog smartDialog) {
+                                    smartDialog.dismiss();
+                                }
+                            }).build().show();
+
 
                 }
             });
@@ -180,12 +227,26 @@ public class SignUpActivity extends BaseActivity {
                         }
                     });
 
-                    SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
-                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                    pDialog.setTitleText("Password Is Required..!!");
-                    pDialog.setCancelable(true);
-                    pDialog.show();
-                    return;
+//                    SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
+//                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                    pDialog.setTitleText("Password Is Required..!!");
+//                    pDialog.setCancelable(false);
+//                    pDialog.show();
+//                    return;
+
+                    new SmartDialogBuilder(SignUpActivity.this)
+                            .setTitle("Error Message")
+                            .setSubTitle("Password Is Required..!!")
+                            .setCancalable(true)
+                            .setTitleFont(face)
+                            .setSubTitleFont(face2)
+                            .setPositiveButton("OK", new SmartDialogClickListener() {
+                                @Override
+                                public void onClick(SmartDialog smartDialog) {
+                                    smartDialog.dismiss();
+                                }
+                            }).build().show();
+
 
                 }
             });
@@ -206,12 +267,26 @@ public class SignUpActivity extends BaseActivity {
                         }
                     });
 
-                    SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
-                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                    pDialog.setTitleText("Confirm Password Is Required..!!");
-                    pDialog.setCancelable(true);
-                    pDialog.show();
-                    return;
+//                    SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
+//                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                    pDialog.setTitleText("Confirm Password Is Required..!!");
+//                    pDialog.setCancelable(false);
+//                    pDialog.show();
+//                    return;
+
+                    new SmartDialogBuilder(SignUpActivity.this)
+                            .setTitle("Error Message")
+                            .setSubTitle("Confirm Password Is Required..!!")
+                            .setCancalable(true)
+                            .setTitleFont(face)
+                            .setSubTitleFont(face2)
+                            .setPositiveButton("OK", new SmartDialogClickListener() {
+                                @Override
+                                public void onClick(SmartDialog smartDialog) {
+                                    smartDialog.dismiss();
+                                }
+                            }).build().show();
+
 
                 }
             });
@@ -276,9 +351,10 @@ public class SignUpActivity extends BaseActivity {
 
 
 //&& value2.equals("error")
-                                    else if (statusCode.equals("422") ) {
 
-Log.d("Hereee" , "janja");
+                                    else if (statusCode.equals("200") && value2.equals("error")) {
+
+
                                         runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
@@ -294,12 +370,27 @@ Log.d("Hereee" , "janja");
                                             public void run() {
 
 
-                                                SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
-                                                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                                                pDialog.setTitleText(value5);
-                                                pDialog.setCancelable(true);
-                                                pDialog.show();
-                                                return;
+//                                                SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
+//                                                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                                                pDialog.setTitleText(value5);
+//                                                pDialog.setCancelable(false);
+//                                                pDialog.show();
+//                                                return;
+
+                                                new SmartDialogBuilder(SignUpActivity.this)
+                                                        .setTitle("Error Message")
+                                                        .setSubTitle(value5)
+                                                        .setCancalable(false)
+                                                        .setTitleFont(face)
+                                                        .setSubTitleFont(face2)
+                                                        .setPositiveButton("OK", new SmartDialogClickListener() {
+                                                            @Override
+                                                            public void onClick(SmartDialog smartDialog) {
+                                                                smartDialog.dismiss();
+                                                            }
+                                                        }).build().show();
+
+
                                             }
                                         });
 
@@ -370,10 +461,10 @@ Log.d("Hereee" , "janja");
                     protected Map<String, String> getParams()
                     {
                         Map<String,String> params = new HashMap<String, String>();
-                        params.put("name","123");
-                        params.put("email","123@gmail.com");
-                        params.put("password","12");
-                        params.put("password_confirmation","12");
+                        params.put("name", username);
+                        params.put("email",email_address);
+                        params.put("password",password_signup);
+                        params.put("password_confirmation",confirm_signup);
 
                         return params;
                     }
@@ -400,12 +491,26 @@ Log.d("Hereee" , "janja");
                     }
                 });
 
-                SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
-                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                pDialog.setTitleText("Password Does Not Match");
-                pDialog.setCancelable(true);
-                pDialog.show();
-                return;
+//                SweetAlertDialog pDialog = new SweetAlertDialog(SignUpActivity.this, SweetAlertDialog.ERROR_TYPE);
+//                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                pDialog.setTitleText("Password Does Not Match");
+//                pDialog.setCancelable(false);
+//                pDialog.show();
+//                return;
+
+                new SmartDialogBuilder(SignUpActivity.this)
+                        .setTitle("Error Message")
+                        .setSubTitle("Password Does Not Match")
+                        .setCancalable(false)
+                        .setTitleFont(face)
+                        .setSubTitleFont(face2)
+                        .setPositiveButton("OK", new SmartDialogClickListener() {
+                            @Override
+                            public void onClick(SmartDialog smartDialog) {
+                                smartDialog.dismiss();
+                            }
+                        }).build().show();
+
             }
 
 

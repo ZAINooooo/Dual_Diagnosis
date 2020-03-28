@@ -79,7 +79,7 @@ Typeface face , face2;
 
         new SmartDialogBuilder2(DetailsActivity.this)
                 .setTitle("Confirmation Message")
-                .setSubTitle("Do You Want To Logout")
+                .setSubTitle("Do You Want To Delete A User")
                 .setCancalable(true)
                 .setTitleFont(face)
                 .setSubTitleFont(face2).setPositiveButton("OK", new SmartDialogClickListener2() {

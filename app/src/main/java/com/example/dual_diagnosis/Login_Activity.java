@@ -3,6 +3,7 @@ package com.example.dual_diagnosis;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import com.android.volley.NetworkResponse;
@@ -10,6 +11,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.rahman.dialog.Activity.SmartDialog;
+import com.rahman.dialog.ListenerCallBack.SmartDialogClickListener;
+import com.rahman.dialog.Utilities.SmartDialogBuilder;
 
 
 import android.text.Html;
@@ -28,6 +32,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class Login_Activity extends BaseActivity {
 
+    Typeface face , face2;
 
     TextView multicolorLine;
     Button login_button;
@@ -47,6 +52,11 @@ TextView forgot_password;
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+
+        face = Typeface.createFromAsset(getAssets(),"ptsanswebbold.ttf");
+        face2 = Typeface.createFromAsset(getAssets(),"ptsanswebregular.ttf");
+
 
         email_login = findViewById(R.id.email_login);
         phone_login = findViewById(R.id.phone_login);
@@ -105,12 +115,26 @@ TextView forgot_password;
                 }
             });
 
-            SweetAlertDialog pDialog = new SweetAlertDialog(Login_Activity.this, SweetAlertDialog.ERROR_TYPE);
-            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-            pDialog.setTitleText("Fields Are Required..!!");
-            pDialog.setCancelable(true);
-            pDialog.show();
-            return;
+//            SweetAlertDialog pDialog = new SweetAlertDialog(Login_Activity.this, SweetAlertDialog.ERROR_TYPE);
+//            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//            pDialog.setTitleText("Fields Are Required..!!");
+//            pDialog.setCancelable(false);
+//            pDialog.show();
+//            return;
+
+            new SmartDialogBuilder(Login_Activity.this)
+                    .setTitle("Error Message")
+                    .setSubTitle("Fields Are Required..!!")
+                    .setCancalable(true)
+                    .setTitleFont(face)
+                    .setSubTitleFont(face2)
+                    .setPositiveButton("OK", new SmartDialogClickListener() {
+                        @Override
+                        public void onClick(SmartDialog smartDialog) {
+                            smartDialog.dismiss();
+                        }
+                    }).build().show();
+
         } else if (email.equals("")) {
             runOnUiThread(new Runnable() {
                 @Override
@@ -123,12 +147,26 @@ TextView forgot_password;
                         }
                     });
 
-                    SweetAlertDialog pDialog = new SweetAlertDialog(Login_Activity.this, SweetAlertDialog.ERROR_TYPE);
-                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                    pDialog.setTitleText("Email Is Required..!!");
-                    pDialog.setCancelable(true);
-                    pDialog.show();
-                    return;
+//                    SweetAlertDialog pDialog = new SweetAlertDialog(Login_Activity.this, SweetAlertDialog.ERROR_TYPE);
+//                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                    pDialog.setTitleText("Email Is Required..!!");
+//                    pDialog.setCancelable(false);
+//                    pDialog.show();
+//                    return;
+
+                    new SmartDialogBuilder(Login_Activity.this)
+                            .setTitle("Error Message")
+                            .setSubTitle("Email Is Required..!!")
+                            .setCancalable(true)
+                            .setTitleFont(face)
+                            .setSubTitleFont(face2)
+                            .setPositiveButton("OK", new SmartDialogClickListener() {
+                                @Override
+                                public void onClick(SmartDialog smartDialog) {
+                                    smartDialog.dismiss();
+                                }
+                            }).build().show();
+
                 }
             });
 
@@ -145,12 +183,26 @@ TextView forgot_password;
                         }
                     });
 
-                    SweetAlertDialog pDialog = new SweetAlertDialog(Login_Activity.this, SweetAlertDialog.ERROR_TYPE);
-                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                    pDialog.setTitleText("Password Is Required..!!");
-                    pDialog.setCancelable(true);
-                    pDialog.show();
-                    return;
+//                    SweetAlertDialog pDialog = new SweetAlertDialog(Login_Activity.this, SweetAlertDialog.ERROR_TYPE);
+//                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                    pDialog.setTitleText("Password Is Required..!!");
+//                    pDialog.setCancelable(false);
+//                    pDialog.show();
+//                    return;
+
+                    new SmartDialogBuilder(Login_Activity.this)
+                            .setTitle("Error Message")
+                            .setSubTitle("Password Is Required..!!")
+                            .setCancalable(true)
+                            .setTitleFont(face)
+                            .setSubTitleFont(face2)
+                            .setPositiveButton("OK", new SmartDialogClickListener() {
+                                @Override
+                                public void onClick(SmartDialog smartDialog) {
+                                    smartDialog.dismiss();
+                                }
+                            }).build().show();
+
 
                 }
             });
@@ -253,12 +305,27 @@ TextView forgot_password;
                                         public void run() {
 
 
-                                            SweetAlertDialog pDialog = new SweetAlertDialog(Login_Activity.this, SweetAlertDialog.ERROR_TYPE);
-                                            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                                            pDialog.setTitleText(value5);
-                                            pDialog.setCancelable(true);
-                                            pDialog.show();
-                                            return;
+//                                            SweetAlertDialog pDialog = new SweetAlertDialog(Login_Activity.this, SweetAlertDialog.ERROR_TYPE);
+//                                            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                                            pDialog.setTitleText(value5);
+//                                            pDialog.setCancelable(false);
+//                                            pDialog.show();
+//                                            return;
+
+
+                                            new SmartDialogBuilder(Login_Activity.this)
+                                                    .setTitle("Error Message")
+                                                    .setSubTitle(value5)
+                                                    .setCancalable(true)
+                                                    .setTitleFont(face)
+                                                    .setSubTitleFont(face2)
+                                                    .setPositiveButton("OK", new SmartDialogClickListener() {
+                                                        @Override
+                                                        public void onClick(SmartDialog smartDialog) {
+                                                            smartDialog.dismiss();
+                                                        }
+                                                    }).build().show();
+
                                         }
                                     });
 

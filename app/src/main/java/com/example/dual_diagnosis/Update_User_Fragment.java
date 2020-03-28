@@ -10,12 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.rahman.dialog.Activity.SmartDialog;
 import com.rahman.dialog.ListenerCallBack.SmartDialogClickListener;
 import com.rahman.dialog.Utilities.SmartDialogBuilder;
@@ -29,6 +35,7 @@ import java.util.Map;
 import androidx.fragment.app.Fragment;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
+import static android.content.ContentValues.TAG;
 import static android.content.Context.MODE_PRIVATE;
 
 public class Update_User_Fragment extends Fragment {
@@ -86,75 +93,29 @@ String access_token;
                 final String names = enter_name.getText().toString();
                 final String phone_number = enter_phone_number.getText().toString();
 
+                RequestQueue queue = Volley.newRequestQueue(getActivity());
+
                 pDialog = Utilss.showSweetLoader(getActivity(), SweetAlertDialog.PROGRESS_TYPE, "Update Profile...");
 
 
-                StringRequest stringRequest = new StringRequest(Request.Method.PUT, "http://dd.oneviewcrm.com/DDS/public/api/user-update/?name="+names+"&phone_no="+phone_number, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
+                Map<String, String> postParam= new HashMap<String, String>();
+                postParam.put("name",names);
+                postParam.put("phone_no",phone_number);
 
-                        Log.d("ResponseIs111" , response);
+                JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.PUT,
+                       "http://dd.oneviewcrm.com/DDS/public/api/user-update/?name="+names+"&phone_no="+phone_number, new JSONObject(postParam),
+                        new Response.Listener<JSONObject>() {
 
-                        try {
-
-
-                            getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-
-                                    Utilss.hideSweetLoader(pDialog);
-                                }
-                            });
-
-                            JSONObject jsonObject = new JSONObject(response);
-                            String messages = jsonObject.getString("message");
-
-                            new SmartDialogBuilder(getActivity())
-                                    .setTitle("Successful Message")
-                                    .setSubTitle("Profile Updated")
-                                    .setCancalable(true)
-                                    .setTitleFont(face)
-                                    .setSubTitleFont(face2).setPositiveButton("OK", new SmartDialogClickListener() {
-                                @Override
-                                public void onClick(SmartDialog smartDialog) {
-
-                                    smartDialog.dismiss();
-//                                    startActivity(new Intent(getActivity() , Main_Activity_Module.class));
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString("name", names);
-                                    editor.apply();
-
-                                    getActivity().finish();
-                                    getActivity().overridePendingTransition( 0, 0);
-                                    startActivity(getActivity().getIntent());
-                                    getActivity().overridePendingTransition( 0, 0);
-
-
-                                }
-
-
-                            }).build().show();
-
-
-
-
-
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                        new Response.ErrorListener() {
                             @Override
-                            public void onErrorResponse(final VolleyError error) {
-                                getActivity().runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Log.d("ErrorIs" , error.toString());
+                            public void onResponse(JSONObject response) {
+                                Log.d(TAG, response.toString());
+//                                msgResponse.setText(response.toString());
 
-                                        getActivity().runOnUiThread(new Runnable() {
+                                Log.d("Response_Time" , response.toString());
+
+                                Toast.makeText(getActivity(), "Response" + ""+ response.toString(), Toast.LENGTH_SHORT).show();
+
+                           getActivity().runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
 
@@ -162,21 +123,54 @@ String access_token;
                                             }
                                         });
 
-
-                                    }
-                                });
                             }
-                        }) {
+                        }, new Response.ErrorListener() {
+
                     @Override
-                    public Map getHeaders() {
-                        HashMap headers = new HashMap();
+                    public void onErrorResponse(VolleyError error) {
+//                        VolleyLog.d(TAG, "Error: " + error.getMessage());
+
+                        Log.d("Error_Response" , error.toString());
+
+//                        Toast.makeText(getActivity(), "Response" + ""+ error.toString(), Toast.LENGTH_SHORT).show();
+
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                Utilss.hideSweetLoader(pDialog);
+                            }
+                        });
+
+
+                        new SmartDialogBuilder(getActivity())
+                                .setTitle("Error Message")
+                                .setSubTitle(error.toString())
+                                .setCancalable(true)
+                                .setTitleFont(face)
+                                .setSubTitleFont(face2)
+                                .setPositiveButton("OK", new SmartDialogClickListener() {
+                                    @Override
+                                    public void onClick(SmartDialog smartDialog) {
+                                        smartDialog.dismiss();
+                                    }
+                                }).build().show();
+
+
+                    }
+                }) {
+
+                    @Override
+                    public Map<String, String> getHeaders() {
+                        HashMap<String, String> headers = new HashMap<>();
 //                        headers.put("Accept","application/json");
                         headers.put("Authorization","Bearer " + access_token);
-                        headers.put("Content-Type","application/x-www-form-urlencoded");
+//                        headers.put("Content-Type", "application/json");
                         return headers;
                     }
 
-                    @Override
+
+                                        @Override
                     protected Map<String, String> getParams()
                     {
                         Map<String,String> params = new HashMap<String, String>();
@@ -189,13 +183,12 @@ String access_token;
                     public String getBodyContentType() {
                         return "application/json";
                     }
+
+
                 };
 
-                stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-                Singleton.getInstance(getActivity()).getRequestQueue().add(stringRequest);
 
-
-
+queue.add(jsonObjReq);
             }
         });
         return view;

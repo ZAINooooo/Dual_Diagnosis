@@ -133,7 +133,7 @@
             android:fontFamily="@font/myriad"
             android:textColor="#FFFFFF"
             android:textSize="20dp"
-            android:text="Sign Out"
+            android:text="Sign Up"
             android:textAllCaps="true" />
     </LinearLayout>
 

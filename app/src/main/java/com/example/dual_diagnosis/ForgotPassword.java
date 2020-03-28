@@ -47,7 +47,7 @@ public class ForgotPassword extends BaseActivity {
     String value3,statusCode,value2,value5;
     SharedPreferences sharedPreferences;
 
-
+    SweetAlertDialog pDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,16 +109,16 @@ login_btn.setOnClickListener(new View.OnClickListener() {
         }
 
         else {
-            String url = "http://dd.oneviewcrm.com/DDS/public/api/password/email";
+            final String url = "http://dd.oneviewcrm.com/DDS/public/api/password/email";
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Toast.makeText(ForgotPassword.this,response,Toast.LENGTH_LONG).show();
-//                            parseData(response);
 
-                            Log.e("response", "onResponse(): " + response);
+
+
+                            Log.e("response", "onResponse(): " + response  + url);
 
                             try {
                                 JSONObject  json = new JSONObject(response);
@@ -132,10 +132,27 @@ login_btn.setOnClickListener(new View.OnClickListener() {
 
                                         String names = jsonObject3.getString("message");
 
-                                        Toast.makeText(ForgotPassword.this, "Password Send", Toast.LENGTH_SHORT).show();
+//                                        Toast.makeText(ForgotPassword.this, "Password Send", Toast.LENGTH_SHORT).show();
 
-                                        startActivity(new Intent(ForgotPassword.this, Login_Activity.class));
-                                        finish();
+
+                                        new SmartDialogBuilder(ForgotPassword.this)
+                                                .setTitle("Success Message")
+                                                .setSubTitle(names)
+                                                .setCancalable(true)
+                                                .setTitleFont(face)
+                                                .setSubTitleFont(face2)
+                                                .setPositiveButton("OK", new SmartDialogClickListener() {
+                                                    @Override
+                                                    public void onClick(SmartDialog smartDialog) {
+
+                                                        smartDialog.dismiss();
+                                                        startActivity(new Intent(ForgotPassword.this, Login_Activity.class));
+                                                        finish();
+
+                                                    }
+                                                }).build().show();
+
+
 
                                         runOnUiThread(new Runnable() {
                                             @Override
@@ -151,7 +168,7 @@ login_btn.setOnClickListener(new View.OnClickListener() {
                                 }
 
 
-                                else if (statusCode.equals("422")) {
+                                else if (statusCode.equals("200") && value2.equals("error")) {
 
 
                                     runOnUiThread(new Runnable() {
@@ -162,23 +179,38 @@ login_btn.setOnClickListener(new View.OnClickListener() {
                                     });
 
 
-                                    value5 = json.getString("error");
+                                    value5 = json.getString("message");
 
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
 
 
-                                            SweetAlertDialog pDialog = new SweetAlertDialog(ForgotPassword.this, SweetAlertDialog.ERROR_TYPE);
-                                            pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                                            pDialog.setTitleText(value5);
-                                            pDialog.setCancelable(true);
-                                            pDialog.show();
-                                            return;
+//                                         pDialog = new SweetAlertDialog(ForgotPassword.this, SweetAlertDialog.ERROR_TYPE);
+//                                         pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                                         pDialog.setTitleText(value5);
+//                                         pDialog.setCancelable(false);
+//                                         pDialog.show();
+//                                            return;
+
+                                            new SmartDialogBuilder(ForgotPassword.this)
+                                                    .setTitle("Error Message")
+                                                    .setSubTitle(value5)
+                                                    .setCancalable(true)
+                                                    .setTitleFont(face)
+                                                    .setSubTitleFont(face2)
+                                                    .setPositiveButton("OK", new SmartDialogClickListener() {
+                                                        @Override
+                                                        public void onClick(SmartDialog smartDialog) {
+                                                            smartDialog.dismiss();
+                                                        }
+                                                    }).build().show();
+
                                         }
                                     });
 
                                 }
+
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -209,7 +241,7 @@ login_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 protected Map<String, String> getParams() {
                     Map<String, String> params = new HashMap<>();
-                    params.put("email", "dual@gmail.com");
+                    params.put("email", forgot);
                     return params;
                 }
 

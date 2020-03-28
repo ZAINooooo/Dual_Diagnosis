@@ -2,6 +2,7 @@ package com.example.dual_diagnosis;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.rahman.dialog.Activity.SmartDialog;
+import com.rahman.dialog.ListenerCallBack.SmartDialogClickListener;
+import com.rahman.dialog.Utilities.SmartDialogBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,7 +45,7 @@ public class Dashboard_Fragment_Admin extends Fragment {
     All_Users_Adapter blogs_Adapter;
     SweetAlertDialog pDialog;
     JSONObject jObject ;
-
+Typeface face,face2;
 
     public Dashboard_Fragment_Admin()
     {
@@ -71,6 +75,10 @@ public class Dashboard_Fragment_Admin extends Fragment {
 
         sharedPreferences = getActivity().getSharedPreferences("DATA", MODE_PRIVATE);
         access_token = sharedPreferences.getString("token", "");
+
+        face = Typeface.createFromAsset(getActivity().getAssets(), "ptsanswebbold.ttf");
+        face2 = Typeface.createFromAsset(getActivity().getAssets(), "ptsanswebregular.ttf");
+
 
         parts_recycler_view = view.findViewById(R.id.parts_recycler_view);
         blogs_Adapter = new All_Users_Adapter(getActivity(), mFlowerList);
@@ -119,10 +127,24 @@ public class Dashboard_Fragment_Admin extends Fragment {
                             }
                         });
 
-                        pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-                        pDialog.setTitleText("No Data Found");
-                        pDialog.setCancelable(true);
-                        pDialog.show();
+//                        pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+//                        pDialog.setTitleText("No Data Found");
+//                        pDialog.setCancelable(false);
+//                        pDialog.show();
+
+                        new SmartDialogBuilder(getActivity())
+                                .setTitle("Error Message")
+                                .setSubTitle("No Data Found")
+                                .setCancalable(false)
+                                .setTitleFont(face)
+                                .setSubTitleFont(face2)
+                                .setPositiveButton("OK", new SmartDialogClickListener() {
+                                    @Override
+                                    public void onClick(SmartDialog smartDialog) {
+                                        smartDialog.dismiss();
+                                    }
+                                }).build().show();
+
                     }
 
                     else
