@@ -124,15 +124,30 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.93" />
 
+
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password"
+        android:textAlignment="center"
+        android:fontFamily="@font/mons"
+
+        app:layout_constraintBottom_toTopOf="@+id/bottommargin"
+        app:layout_constraintEnd_toStartOf="@+id/rightmargin"
+        app:layout_constraintStart_toStartOf="@+id/leftmargin"
+        />
+
     <TextView
         android:id="@+id/multicolorline"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="this line will change programitacally"
         android:textAlignment="center"
+        android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:fontFamily="@font/mons"
-        app:layout_constraintBottom_toTopOf="@+id/bottommargin"
+       app:layout_constraintTop_toBottomOf="@id/forgot_password"
         app:layout_constraintEnd_toStartOf="@+id/rightmargin"
         app:layout_constraintStart_toStartOf="@+id/leftmargin"
         />

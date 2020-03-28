@@ -21,10 +21,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
-import com.rahman.dialog.Activity.SmartDialog;
-import com.rahman.dialog.ListenerCallBack.SmartDialogClickListener;
-import com.rahman.dialog.Utilities.SmartDialogBuilder;
 import com.squareup.picasso.Picasso;
+
+
 
 public class Dual_Diagnosis extends AppCompatActivity {
 
@@ -39,6 +38,8 @@ public class Dual_Diagnosis extends AppCompatActivity {
 
     private static final String TAG_HOME = "DASHBOARD";
     private static final String TAG_PRICES = "Add Space";
+    private static final String TAG_UPDATE_PROFILE = "Update Profile";
+
     private static final String TAB_ABOUT_US = "About us";
     public static String CURRENT_TAG = TAG_HOME;
     private Toolbar toolbar;
@@ -46,6 +47,10 @@ public class Dual_Diagnosis extends AppCompatActivity {
     private TextView txtName, txtWebsite;
     private View navHeader;
     private ImageView imgNavHeaderBg, imgProfile;
+    SharedPreferences sharedPreferences;
+String email_Address, name;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,15 @@ public class Dual_Diagnosis extends AppCompatActivity {
 
         mHandler = new Handler();
 
+
+        sharedPreferences = getSharedPreferences("DATA", MODE_PRIVATE);
+        email_Address = sharedPreferences.getString("email", "");
+        name = sharedPreferences.getString("name", "");
+
+
+        Log.d("Getter_Values" , name + email_Address);
+
+
         navigationView = findViewById(R.id.nav_view);
         drawer = findViewById(R.id.drawer);
         m1 = findViewById(R.id.m1);
@@ -68,6 +82,10 @@ public class Dual_Diagnosis extends AppCompatActivity {
         imgNavHeaderBg = navHeader.findViewById(R.id.img_header_bg);
         imgProfile = navHeader.findViewById(R.id.img_profile);
         activityTitles = getResources().getStringArray(R.array.nav_item_activity_titles);
+
+
+
+
 
 
         loadNavHeader();
@@ -90,8 +108,8 @@ public class Dual_Diagnosis extends AppCompatActivity {
     private void loadNavHeader() {
         // name, website
 
-        txtName.setText("Dual Diagnosis");
-        txtWebsite.setText("itsec.co.uk");
+        txtName.setText(name);
+        txtWebsite.setText(email_Address);
 
         Picasso.get().load("https://www.pngkey.com/png/full/349-3499617_person-placeholder-person-placeholder.png").noFade().into(imgProfile);
 //        navigationView.getMenu().getItem(2).setActionView(R.layout.menu_dot);
@@ -119,6 +137,13 @@ public class Dual_Diagnosis extends AppCompatActivity {
                         CURRENT_TAG = TAG_PRICES;
                         break;
 
+
+                    case R.id.nav_update_profile:
+                        navItemIndex = 2;
+                        CURRENT_TAG = TAG_UPDATE_PROFILE;
+                        break;
+
+
                     case R.id.nav_about_us:
                         startActivity(new Intent(Dual_Diagnosis.this, About_Us_Activity.class));
                         drawer.closeDrawers();
@@ -136,17 +161,12 @@ public class Dual_Diagnosis extends AppCompatActivity {
                             @Override
                             public void onClick(SmartDialog2 smartDialog) {
 
-                                //                                SharedPreferences.Editor editor=sharedPreferences.edit();
-//                                editor.remove("email").apply();
-//                                editor.remove("name").apply();
-//                                editor.remove("phone").apply();
-//                                editor.remove("token").apply();
-//                                editor.remove("user_id").apply();
-//                                editor.remove("role").apply();
+                           SharedPreferences.Editor editor=sharedPreferences.edit();
+                                editor.remove("token").apply();
 
                                 smartDialog.dismiss();
                                 startActivity(new Intent(Dual_Diagnosis.this , Login_Activity.class));
-//                        finish();
+
                             }
 
 
@@ -250,13 +270,13 @@ public class Dual_Diagnosis extends AppCompatActivity {
 
             case 1:
 
-                return  new  Add_Space_Fragment();
+                return  new Add_Space_Fragment();
                 // photos
 //                return new Blogs_Fragment();
 
             case 2:
                 // movies fragment
-//                return new Prices_Fragment();
+                return new Update_User_Fragment();
 
             default:
 //                return new Home_Fragment();

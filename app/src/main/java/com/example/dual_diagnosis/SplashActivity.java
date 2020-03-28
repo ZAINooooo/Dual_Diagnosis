@@ -31,12 +31,12 @@ public class SplashActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("DATA", MODE_PRIVATE);
         String emails = sharedPreferences.getString("email",null);
         String names = sharedPreferences.getString("name",null);
-        String phone_num = sharedPreferences.getString("phone",null);
+//        String phone_num = sharedPreferences.getString("phone",null);
         String user_token = sharedPreferences.getString("token",null);
-        String users_id = sharedPreferences.getString("user_id",null);
-        String roles = sharedPreferences.getString("role",null);
+//        String users_id = sharedPreferences.getString("user_id",null);
+//        String roles = sharedPreferences.getString("role",null);
 
-        if (emails!= null && names!= null && phone_num!= null && user_token!= null && users_id!= null && roles!= null)
+        if (emails!= null && names!= null && user_token!= null )
         {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear().apply();

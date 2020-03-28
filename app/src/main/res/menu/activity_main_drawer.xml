@@ -17,6 +17,11 @@
 
 
         <item
+            android:id="@+id/nav_update_profile"
+            android:icon="@drawable/ic_local_movies_black_24dp"
+            android:title="Update Profile" />
+
+        <item
             android:id="@+id/nav_about_us"
             android:icon="@drawable/ic_local_movies_black_24dp"
             android:title="@string/nav_about_us" />
